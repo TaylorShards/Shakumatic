@@ -4,9 +4,10 @@
 
 A web-based calculator for determining the embouchure and finger hole positions for a transverse flute based on acoustic principles. This project is a modernized implementation (**NG - Next Generation**) of calculation methods widely used by instrument makers and enthusiasts, preserving valuable acoustic modeling techniques in an accessible format.
 
-**(Consider adding a screenshot of the calculator interface here)**
+## 🌐 Live Demo
 
-[Link to live demo if you host it somewhere, e.g., GitHub Pages]
+Check out the live Flutomat app here:  
+👉 [https://unityrobot.github.io/Flutomat/](https://unityrobot.github.io/Flutomat/)
 
 ## Features
 
