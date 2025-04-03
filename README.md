@@ -83,7 +83,6 @@ This revised version respects the original logic and acoustic formulas while mak
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-*(Ensure you have a `LICENSE.md` file in your project containing the actual MIT License text.)*
 
 ## Contributing
 
