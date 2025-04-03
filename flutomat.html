@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutomat NG - Modern Flute Calculator</title>
+    <link rel="stylesheet" href="flutomat.css">
+</head>
+
+<body>
+    <h1>Flutomat NG - Flute Calculator</h1>
+
+    <form id="fluteForm">
+        <fieldset>
+            <legend>Global Parameters</legend>
+            <div>
+                <label for="units">Units:</label>
+                <input type="radio" name="units" value="cm" id="unitsCm"> <label for="unitsCm">cm</label>
+                <input type="radio" name="units" value="inches" id="unitsInches" checked> <label
+                    for="unitsInches">inches</label>
+            </div>
+            <div>
+                <label for="temperature">Temperature:</label>
+                <input type="number" name="temperature" id="temperature" value="20" step="0.1" size="5">
+                <select name="tempUnit" id="tempUnit">
+                    <option value="C" selected>°C</option>
+                    <option value="F">°F</option>
+                </select>
+                <span id="speedOfSoundDisplay"></span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Pipe Dimensions</legend>
+            <div>
+                <label for="boreDiameter">Inside Bore Diameter:</label>
+                <input type="number" name="boreDiameter" id="boreDiameter" value="0.824" step="any" required>
+            </div>
+            <div>
+                <label for="wallThickness">Wall Thickness:</label>
+                <input type="number" name="wallThickness" id="wallThickness" value="0.113" step="any" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Target Frequencies & Hole Dimensions</legend>
+            <p>Set key/lowest note or enter frequencies manually. Diameters are required.</p>
+            <div>
+                <label for="keySelector">Select Key (sets frequencies):</label>
+                <select id="keySelector">
+                    <option value="68">G#4/Ab4</option>
+                    <option value="67">G4</option>
+                    <option value="66">F#4/Gb4</option>
+                    <option value="65">F4</option>
+                    <option value="64">E4</option>
+                    <option value="63">D#4/Eb4</option>
+                    <option value="62" selected>D4</option>
+                    <option value="61">C#4/Db4</option>
+                    <option value="60">C4 (Middle C)</option>
+                    <option value="59">B3</option>
+                    <option value="58">A#3/Bb3</option>
+                    <option value="57">A3</option>
+                    <option value="56">G#3/Ab3</option>
+                    <option value="55">G3</option>
+                    <option value="54">F#3/Gb3</option>
+                    <option value="53">F3</option>
+                    <option value="52">E3</option>
+                    <option value="51">D#3/Eb3</option>
+                    <option value="50">D3</option>
+                    <option value="49">C#3/Db3</option>
+                    <option value="48">C3</option>
+                    <!-- Add more keys as needed -->
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hole Type</th>
+                        <th>Target Frequency (Hz)</th>
+                        <th>Diameter</th>
+                        <th>Calculated Distance from Open End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Embouchure</td>
+                        <td>---------</td>
+                        <td><input type="number" name="embouchureDiameter" id="embouchureDiameter" value="0.500"
+                                step="any" required></td>
+                        <td><output name="resultEmbouchure" id="resultEmbouchure"
+                                for="embouchureDiameter boreDiameter wallThickness"></output></td>
+                    </tr>
+                    <!-- Finger Holes (Generate dynamically or list explicitly) -->
+                    <!-- Example for 6 holes -->
+                    <tr class="hole-row" data-hole-index="5">
+                        <td>Finger Hole 6 (Highest Pitch)</td>
+                        <td><input type="number" name="holeFrequency" id="freq6" value="554.37" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam6" value="0.375" step="any" required></td>
+                        <td><output name="resultHole" id="result6"></output></td>
+                    </tr>
+                    <tr class="hole-row" data-hole-index="4">
+                        <td>Finger Hole 5</td>
+                        <td><input type="number" name="holeFrequency" id="freq5" value="493.88" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam5" value="0.375" step="any" required></td>
+                        <td><output name="resultHole" id="result5"></output></td>
+                    </tr>
+                    <tr class="hole-row" data-hole-index="3">
+                        <td>Finger Hole 4</td>
+                        <td><input type="number" name="holeFrequency" id="freq4" value="440.00" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam4" value="0.3125" step="any" required></td>
+                        <td><output name="resultHole" id="result4"></output></td>
+                    </tr>
+                    <tr class="hole-row" data-hole-index="2">
+                        <td>Finger Hole 3</td>
+                        <td><input type="number" name="holeFrequency" id="freq3" value="392.00" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam3" value="0.3125" step="any" required></td>
+                        <td><output name="resultHole" id="result3"></output></td>
+                    </tr>
+                    <tr class="hole-row" data-hole-index="1">
+                        <td>Finger Hole 2</td>
+                        <td><input type="number" name="holeFrequency" id="freq2" value="369.99" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam2" value="0.4375" step="any" required></td>
+                        <td><output name="resultHole" id="result2"></output></td>
+                    </tr>
+                    <tr class="hole-row" data-hole-index="0">
+                        <td>Finger Hole 1 (Lowest Pitch)</td>
+                        <td><input type="number" name="holeFrequency" id="freq1" value="329.63" step="any" required>
+                        </td>
+                        <td><input type="number" name="holeDiameter" id="diam1" value="0.250" step="any" required></td>
+                        <td><output name="resultHole" id="result1"></output></td>
+                    </tr>
+                    <!-- End Finger Holes -->
+                    <tr>
+                        <td>End of Flute (All Holes Closed)</td>
+                        <td><input type="number" name="endFrequency" id="endFrequency" value="293.66" step="any"
+                                required></td>
+                        <td>---------</td>
+                        <td><output name="resultEnd" id="resultEnd">0.000</output></td> <!-- Always 0 -->
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+
+        <button type="submit" id="calculateButton">Calculate Positions</button>
+        <button type="reset" id="resetButton">Reset Defaults</button>
+
+    </form>
+
+    <div id="info">
+        <h2>Notes & Assumptions</h2>
+        <ul>
+            <li>Calculations based on simplified 1D acoustic models (Benade et al.). Assumes cylindrical bore.</li>
+            <li>Distances are calculated from the physical open end of the flute tube.</li>
+            <li>Speed of sound is adjusted for temperature. Ensure accurate temperature input.</li>
+            <li>The embouchure correction uses Kosel's empirical fit. Cork placement relative to the embouchure center
+                is typically 1-1.5x the embouchure diameter *towards the closed end*.</li>
+            <li>Model accuracy decreases at higher frequencies (approaching hole cutoff frequencies).</li>
+            <li>The script requires 6 finger holes.</li>
+        </ul>
+    </div>
+
+    <script src="flutomat.js"></script>
+</body>
+
+</html>
