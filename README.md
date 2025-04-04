@@ -2,11 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Link to your LICENSE file -->
 
-A web-based calculator for determining the embouchure and finger hole positions for a transverse flute based on acoustic principles. This project is a modernized implementation (**NG - Next Generation**) of calculation methods widely used by instrument makers and enthusiasts, preserving valuable acoustic modeling techniques in an accessible format.
+A web-based calculator for determining the embouchure and finger hole positions for a transverse flute based on acoustic principles. This project is a modernized implementation (**Next Generation**) of calculation methods widely used by instrument makers and enthusiasts, preserving valuable acoustic modeling techniques in an accessible format.
 
-## 🌐 Live Demo
+## 🌐 Online version
 
-Check out the live Flutomat app here:  
+Check out the Flutomat here:  (works in landscape view on the phone)
 👉 [https://unityrobot.github.io/Flutomat/](https://unityrobot.github.io/Flutomat/)
 
 ## Features
@@ -20,7 +20,7 @@ Check out the live Flutomat app here:
     *   Closed Hole Correction (`C_c`)
     *   Effective Hole Height (`t_e`)
     *   Embouchure Correction (using Kosel's empirical fit)
-*   Uses a robust non-iterative **quadratic solution** for calculating hole positions.
+*   Uses a non-iterative **quadratic solution** for calculating hole positions.
 *   Modern, user-friendly web interface built with standard HTML5, CSS3, and ES6+ JavaScript (Class-based, no global scope pollution).
 *   Includes helpful notes and assumptions directly in the interface.
 *   Input validation and clear display of results.
@@ -82,7 +82,7 @@ This revised version respects the original logic and acoustic formulas while mak
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 ## Contributing
