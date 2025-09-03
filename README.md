@@ -1,3 +1,5 @@
+tzz. I will be changing this to 5 finger hole calcuator. For end-blown flutes. The Japanese Shakuhachi penatonic minor scale (5 holes). I might add options for other scales...
+
 # Flutomat NG - Modernized Flute Calculator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Link to your LICENSE file -->
